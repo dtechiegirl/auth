@@ -1,4 +1,5 @@
 
+import 'package:authentication_screeen/pages/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,9 @@ class SignupScreen extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              Text("SIgn Up"),
+              Text("SIgn Up", style: TextStyle(
+                fontSize: 30
+              ),),
               Form(child: Column(
                 children: [
                   Row(
@@ -76,6 +79,26 @@ class SignupScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                          onPressed: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context){
+                                  return LoginPage();
+                                })
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              Text("Login"),
+                              Icon(Icons.arrow_forward_ios, size: 18,)
+                            ],
+                          ))
+                    ],
+                  )
                 ],
               ))
             ],

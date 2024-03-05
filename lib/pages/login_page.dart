@@ -1,5 +1,6 @@
 
 
+import 'package:authentication_screeen/pages/sign_up.dart';
 import 'package:authentication_screeen/widgets/my_button.dart';
 import 'package:authentication_screeen/widgets/my_text_field.dart';
 import 'package:flutter/cupertino.dart';
@@ -94,13 +95,23 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
-                Image.asset(
-                  "assets/images/gp.png",
-                  // height: 170,
-                  width: 120,
-                ),
+                TextButton(
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context){
+                            return SignupScreen();
+                          })
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Text("Signup"),
+                        Icon(Icons.arrow_forward_ios, size: 18,)
+                      ],
+                    ))
               ],
             )
           ],
